@@ -1,43 +1,87 @@
-@import url("https://fonts.googleapis.com/css?family=Oswald:300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap");
 
 body {
-  font-family: "Oswald";
+  font-family: "Hind", sans-serif;
 }
 
-:root{
+:root {
   --main-color: #ff7373;
 }
-.content-wrapper {
-  max-width: 710px;
-  margin: 0 auto;
-  height: 100vh;
-  align-items: center;
+
+.page-wrapper {
+  padding: 0 100px;
+  min-height: 100vh;
+  width: 100%;
+  background: #eee;
+  box-sizing: border-box;
+  position: relative;
+
   display: flex;
+  align-items: center;
+}
 
-  h2 {
-    font-size: 4em;
+.project-list {
+  mix-blend-mode: difference;
+  z-index: 1;
+
+  &:hover {
+    .project-title {
+      opacity: 0.1;
+    }
+  }
+  .project-item {
+    display: inline-block;
+    margin-right: 20px;
     margin-bottom: 20px;
-    position: relative;
+    &:last-of-type {
+      margin-right: 0px;
 
-    &:first-of-type {
-      &:after {
+      .project-title:after {
         content: "";
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background-color: var(--main-color);
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(-30%, -20%);
-        z-index: -1;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      .project-title {
+        opacity: 1;
+      }
+    }
+    .project-title {
+      display: flex;
+      transition: opacity 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+      font-size: 80px;
+      color: #eee;
+      z-index: 10;
+      font-weight: 300;
+
+      &:after {
+        content: ",";
       }
     }
   }
+}
 
-  p {
-    font-weight: 300;
-    color: var(--main-color);
-    letter-spacing: 15px;
+.project-media {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  img,
+  video {
+    // transition: opacity .35s cubic-bezier(0.77, 0, 0.175, 1);
+
+    opacity: 0;
+    position: absolute;
+    width: auto;
+    height: auto;
+    max-height: 50%;
+    max-width: 60%;
+    object-fit: contain;
+    pointer-events: none;
+    &.is-active {
+      opacity: 1;
+    }
   }
 }
