@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "web-unlocked-starter-project",
   "private": true,
   "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
@@ -15,9 +15,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.0.5",
-    "antd": "^4.1.0",
     "gatsby": "^2.20.3",
-    "gatsby-plugin-antd": "^2.2.0",
     "gatsby-plugin-less": "^3.1.1",
     "gatsby-plugin-sass": "^2.2.1",
     "less": "^3.11.1",
